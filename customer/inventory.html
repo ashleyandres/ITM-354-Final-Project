@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+
+    <h1><img src ="images/ShabuyaLogo.jpg"style="width: 300px; height: 100px;"></h1>
+
+    <div style="overflow-x:auto; background-color: lightgray;">
+        <table id="customers">
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Employee</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>
+                    <form>
+                        <input type="text" id="qty" name="qty"><br>
+                        <!--Inputs the text box-->
+                    </form>
+                </td>
+                <td><form>
+                    <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box-->
+                </form></td>
+            </tr>
+            <tr>
+                <td>Berglunds snabbköp</td>
+                <td> <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box--></td>
+                <td><form>
+                    <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box-->
+                </form></td>
+            </tr>
+            <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td> <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box--></td>
+                <td><form>
+                    <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box-->
+                </form></td>
+            </tr>
+            <tr>
+                <td>Ernst Handel</td>
+                <td> <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box--></td>
+                <td><form>
+                    <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box-->
+                </form></td>
+            </tr>
+            <tr>
+                <td>Island Trading</td>
+                <td> <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box--></td>
+                <td><form>
+                    <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box-->
+                </form></td>
+            </tr>
+            <tr>
+                <td>Königlich Essen</td>
+                <td> <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box--></td>
+                <td><form>
+                    <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box-->
+                </form></td>
+            </tr>
+            <tr>
+                <td>Laughing Bacchus Winecellars</td>
+                <td> <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box--></td>
+                <td><form>
+                    <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box-->
+                </form></td>
+            </tr>
+            <tr>
+                <td>Magazzini Alimentari Riuniti</td>
+                <td> <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box--></td>
+                <td><form>
+                    <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box-->
+                </form></td>
+            </tr>
+            <tr>
+                <td>North/South</td>
+                <td> <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box--></td>
+                <td><form>
+                    <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box-->
+                </form></td>
+            </tr>
+            <tr>
+                <td>Paris spécialités</td>
+                <td> <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box--></td>
+                <td><form>
+                    <input type="text" id="qty" name="qty"><br>
+                    <!--Inputs the text box-->
+                </form></td>
+            </tr>
+        </table>
+
+        <!--Form below, Can take this out! Was just testing it-->
+        <header class="w3-display-container w3-content" >
+           
+            <div class="w3-display-left w3-padding w3-col l6 m8">
+              <div class="w3-container w3-red">
+                <h2><i class="fa fa-bed w3-margin-right"></i>Time Stamp</h2>
+              </div>
+              <div class="w3-container w3-white w3-padding-16">
+                <form action="/action_page.php" target="_blank">
+                  <div class="w3-row-padding" >
+                    <div class="w3-half w3-margin-bottom">
+                      <label><i class="fa fa-calendar-o"></i> Check In</label>
+                      <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckIn" required>
+                    </div>
+                    <div class="w3-half">
+                      <label><i class="fa fa-calendar-o"></i> Check Out</label>
+                      <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckOut" required>
+                    </div>
+                  </div>
+                  <div class="w3-row-padding" >
+            
+                    
+                  </div>
+                  <button class="w3-button w3-dark-grey" type="submit"><i class="fa fa-search w3-margin-right"></i> Submit</button>
+                </form>
+              </div>
+            </div>
+          </header>
+       
+</body>
+
+</html>
