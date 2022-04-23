@@ -1,0 +1,59 @@
+<!--Ashley's Login Page, template from w3 schools login page-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    //Reference to alerts in Assign. 1
+    let params = (new URL(document.location)).searchParams;
+    window.onload = function () {
+        if (params.has('error')) {
+            alert('Invalid Username or Password');
+        }
+    }
+</script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!--StyleSheets-->
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Times+New+Roman|Oswald|Open+Sans">
+
+</head>
+<body >
+  <script>
+    document.write( `<form class ="login" action="process_login${location.search}" method="POST">`)
+  </script>
+    <header >
+        <img src ="images/ShabuyaLogo.jpg"style="width: 300px; height: 100px;">
+    </header>
+
+   
+    <div class="container">
+    <h1> Log In</h1>
+    <hr>
+
+    <label for= "username"> <b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+
+    <button type="submit" name ="signin_submit" class="registerbtn">Sign In</button>
+  </div>
+  </div>
+  <div class="container signin">
+  <script>
+    document.write( `<p>Don't have an account? <a href="./Registration.html${location.search}">Sign Up!</a>.</p>`)
+  </script>
+
+  </form>
+    
+  </div>
+
+</body>
+</html>
+<script> 
+  login.action += document.location.search; // Saves query string from my products page for the invoice (Borrowed from Prof. Port)
+</script>
