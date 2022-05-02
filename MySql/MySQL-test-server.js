@@ -8,7 +8,7 @@ var con = mysql.createConnection({
   host: '127.0.0.1',
   user: "root",
   port: 3306,
-  database: "TestTravel",
+  database: "Travel",
   password: ""
 });
 
@@ -29,11 +29,11 @@ function isNonNegInt(stringToCheck, returnErrors = false) {
   return returnErrors ? errors : (errors.length == 0);
 }
 
-function query_DB(GET, response) {
-  if (isNonNegInt(GET['low_price'])
-    && isNonNegInt(GET['high_price'])) {   // Only query if we got a low and high price
-    low = GET['low_price'];      // Grab the parameters from the submitted form
-    high = GET['high_price'];
+function query_DB(POST, response) {
+  if (isNonNegInt(POST['low_price'])
+    && isNonNegInt(POST['high_price'])) {   // Only query if we got a low and high price
+    low = POST['low_price'];      // Grab the parameters from the submitted form
+    high = POST['high_price'];
     query = "SELECT * FROM Room where price > " + low + " and price < " + high;  // Build the query string
     con.query(query, function (err, result, fields) {   // Run the query
       if (err) throw err;
@@ -66,9 +66,9 @@ app.all('*', function (request, response, next) {
   next();
 });
 
-app.get("/process_query", function (request, response) {
-  let GET = request.body;
-  query_DB(GET, response);
+app.post("/process_query", function (request, response) {
+  let POST = request.body;
+  query_DB(POST, response);
 });
 
 app.listen(8081, () => console.log(`listening on port 8080`));
