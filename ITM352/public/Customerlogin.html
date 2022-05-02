@@ -1,0 +1,38 @@
+<!-- Vincent Wang -->
+<!-- Login template from https://speckyboy.com/login-pages-html5-css/ -->
+<!-- Code taken from W3 schools - How to create a login form (Followed along with getting started with Assignment 2 screencast) -->
+<!-- Creates a login form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shabuya</title>
+</head>
+<body>
+    <div class="login">
+        <h1>Customer Login</h1>
+        <!-- Creates input boxes for users to input their login info -->
+          <p><input type="text" placeholder="Enter Username" name="uname" required></p>
+          <p><input type="password" placeholder="Enter Password" name="psw" required></p>
+          <script>
+            // Generates login form
+            document.write(`<a href="./Customer.html${location.search}"`)
+        </script>
+        <br>
+          <p class="submit"><input type="submit" name="commit" value="Login"></p>
+        </form>
+      </div>
+      
+      <div class="login-help">
+        <script>
+            // Sends to register.html if click this button for users who have not registered
+            document.write(`<a href="./register.html${location.search}"<p>Don't have an account? Sign Up!</a></p>`);
+        </script>
+      </div>
+</body>
+</html>
+
+
