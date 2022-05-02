@@ -5,7 +5,7 @@ var con = mysql.createConnection({
   host: '127.0.0.1',
   user: "root",
   port: 3306,
-  database: "TestTravel",
+  database: "Travel",
   password: ""
 });
 
@@ -14,7 +14,7 @@ con.connect(function(err) {
   console.log("Connected!");
 });
 
-con.query("SELECT * FROM Room WHERE price > 25", function (err, result, fields) {
+con.query("SELECT * FROM Room where price > 25", function (err, result, fields) {
     if (err) throw err;
     console.log(result);  
 });
