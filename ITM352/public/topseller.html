@@ -53,37 +53,16 @@
             <span class="controls activeControl">Weekly</span>
             <span class="controls">Monthly</span>
           </div>
-          <div class="mainChart">
-            <canvas id="salesData"></canvas>
-            <h2>Today</h2>
-      
-            <div id="totalSales">
-              <div class="col">
-                <div id="AYCES" class="progressBar"></div>
-                <span class="progressTitle">AYCE Head Count Sales : </span>
-                    <lable>
-                        <input type="text" id="AYCE"><br>
-                    </lable>
-                </div>
 
-              <div class="col">
-                <div id="BS" class="progressBar"></div>
-                <span class="progressTitle">Beverages Sales : </span>
-                    <lable>
-                        <input type="text" id="BSSale"><br>
-                    </lable>
-
-              </div>
-              <div class="col">
-                <div id="GS" class="progressBar"></div>
-                <span class="progressTitle">Gross Sales : </span>
-
-                    <lable>
-                        <input type="text" id="GrossSale"><br>
-                    </lable>
-              </div>
-              <button type="button" id="Submit">Submit</button><br>
-            </div>
+<body> 
+ <Form action="/process_topseller_report" method="POST" style="color:white">
+   <h1 style="color:white;font-size:40px">Please select the operation time period</h1><br><br><br>
+   Type of Service <br> (Lunch Or Dinner) <input type="text" name="type_of_service">
+  <br><br>
+   Input Date <input type="date" name="seller_date" ><br><br><br>
+   <input type="submit" value="Generate Top Seller Report" style="color:gray;font-size:25px"><br><br><br>
+ </Form>
+</body>
             
 
             <table>
@@ -125,9 +104,9 @@
 </body>
 </html>
 
-<script src="Dailysale.js"></script>
+<script src="server.js"></script>
 
-<h2>Present By M.I.S Team for ITM 354</h2>
+<h2>Present By M.I.S Team</h2>
 </body>
 
 </html>
