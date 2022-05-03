@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ds.css">
+        <a>
+        <a href="index.html">
+            <img src="images/ShabuyaLogo.jpg" width="300">     
+        </a>
+    
+</head>
+
+<body>
+    
+    <div id="container">
+        <div id="sideMenu">
+          <h1>Sales Report</h1>
+      
+          <ul class="menu">
+            <li>Main</li>
+            <li>Dashboard</li>
+            <li>Reports <span class="notification">8</span></li>
+            <li>Groups</li>
+          </ul>
+      
+          <ul class="menu">
+            <li>Account</li>
+            <li>Activity</li>
+            <li>Messages <span class="notification">4</span></li>
+            <li>Downloads</li>
+          </ul>
+      
+          <ul class="menu">
+            <li>Categories</li>
+            <li>AYCE Head Count Sales <span class="colorIcon red"></span></li>
+            <li>Beverages Sales <span class="colorIcon orange"></span></li>
+            <li>Gross Sales <span class="colorIcon green"></span></li>
+          </ul>
+          <div class="addCategory"><span class="plus">+</span> Add Category</div>
+        
+        
+        </div>
+        <div id="content">
+          <div id="titleBar">
+            <h2>Dashboard</h2>
+            <div id="profilePic">
+              <img src="images/ShabuyaLogo copy.jpg" >
+            </div>
+            <span class="controls activeControl">Weekly</span>
+            <span class="controls">Monthly</span>
+          </div>
+          <div class="mainChart">
+            <canvas id="salesData"></canvas>
+            <h2>Today</h2>
+      
+            <div id="totalSales">
+              <div class="col">
+                <div id="AYCES" class="progressBar"></div>
+                <span class="progressTitle">AYCE Head Count Sales : </span>
+                    <lable>
+                        <input type="text" id="AYCE"><br>
+                    </lable>
+                </div>
+
+              <div class="col">
+                <div id="BS" class="progressBar"></div>
+                <span class="progressTitle">Beverages Sales : </span>
+                    <lable>
+                        <input type="text" id="BSSale"><br>
+                    </lable>
+
+              </div>
+              <div class="col">
+                <div id="GS" class="progressBar"></div>
+                <span class="progressTitle">Gross Sales : </span>
+
+                    <lable>
+                        <input type="text" id="GrossSale"><br>
+                    </lable>
+              </div>
+              <button type="button" id="Submit">Submit</button><br>
+            </div>
+            
+
+            <table>
+              <tr>
+                <th>Top Sales</th>
+                <th>Quantity</th>
+                <th>Cost</th>
+              </tr>
+      
+              <tr>
+                <td>U.S. Wagyu Sirloin Tip</td>
+                <td>1234</td>
+                <td>$1,845</td>
+              </tr>
+      
+              <tr>
+                <td>Prime Flat Iron Steak</td>
+                <td>1141</td>
+                <td>$1427</td>
+              </tr>
+      
+              <tr>
+                <td>Premium Rib Eye</td>
+                <td>987</td>
+                <td>$961</td>
+              </tr>
+      
+              <tr>
+                <td>Prime Blade Meat</td>
+                <td>654</td>
+                <td>$531</td>
+              </tr>
+            </table>
+          </div>
+      
+        </div>
+      </div>
+      </div>
+</body>
+</html>
+
+<script src="Dailysale.js"></script>
+
+<h2>Present By M.I.S Team for ITM 354</h2>
+</body>
+
+</html>
