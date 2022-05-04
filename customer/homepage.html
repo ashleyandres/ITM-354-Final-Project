@@ -10,25 +10,29 @@
     <link rel="stylesheet" href="homepage.css">
     <center>
         <a>
-            <a href="index.html">
+            <a href="homepage.html">
                 <img src="images/ShabuyaLogo.jpg" width="300">
                 
             </a>
     </center>
-    <div class="dropdown">
-        <button class="dropbtn">Menu</button>
-        <div class="dropdown-content">
-          <a href="#">Lunch Special Menu</a>
-          <a href="#">Regular Menu </a>
-          <a href="#">Beverages</a>
+    <div class="dropdown" style="float:left;">
+      <button class="dropbtn">Mune</button>
+      <div class="dropdown-content" style="left:0;">
+          <a href="images/Shabuya_Menu_Lunch.png">Lunch Special Menu</a>
+          <a href="images/Shabuya_Menu_Dinner.png">Regular Menu </a>
+          <a href="images/Shabuya_Beverage.png">Beverages</a>
         </div>
-        <div class="dropdown">
+    </div>
+
+        <div class="dropdown" style="float:right;">
           <button class="dropbtn">Login</button>
           <div class="dropdown-content">
+          <div class="dropdown-content" style="right:0;">
             <a href="ManagerLogin.html">Manager</a>
             <a href="CustomerLogin.html">Customer</a>
           </div>
         
+      </div>
       </div>
 
 
@@ -38,41 +42,7 @@
         </div>
       
         <!-- Button to open the modal login form -->
-<button onclick="document.getElementById('id01').style.display='block'" class="btn">Login</button>
 
-<!-- The Modal -->
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" 
-class="close" title="Close Modal">&times;</span>
-
-  <!-- Modal Content -->
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-     
-      
       
     <!-- Slideshow container -->
     
