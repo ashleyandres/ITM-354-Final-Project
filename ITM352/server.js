@@ -25,7 +25,7 @@ function query_DB_sales_report(POST_sale_report, response) { // function for pro
       end_date = POST_sale_report['report_end_date'];
       report_year = POST_sale_report['report_year'];
       report_month = POST_sale_report['report_month'];
-      query = "SELECT * FROM Orders WHERE Customer_activity_day >=" + beg_date + " AND Customer_activity_day <=" + end_date + " AND Customer_activity_month =" + report_month + " AND Customer_activity_year = " + report_year;  // Build the query string
+      query = "SELECT Total, C_fname, C_lname, Order_number, Customer_activity_year, Customer_activity_month, Customer_activity_day FROM total_order_info WHERE Customer_activity_day >=" + beg_date + " AND Customer_activity_day <=" + end_date + " AND Customer_activity_month =" + report_month + " AND Customer_activity_year = " + report_year;  // Build the query string
 
       con.query(query, function (err, result, fields) {   // Run the query
         if (err) throw err;
@@ -38,11 +38,12 @@ function query_DB_sales_report(POST_sale_report, response) { // function for pro
         // Now build the response: table of results and form to do another query
         response_form = `<form action="managerinput.html" method="GET">`;
         response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
-        response_form += `<td><B>Item Number</td><td><B>Item Name</td><td><B>Customer Activity Date</td>`;
+        response_form += `<td><B>Order Number</td><td><B>Customer Name</td><td><B>Total</td><td><B>Customer Activity Date</td>`;
 
         for (i in res_json) {
           response_form += `<tr><td> ${res_json[i].Order_number}</td>`;
-          response_form += `<td> ${res_json[i].Quantity_ordered}</td>`;
+          response_form += `<td> ${res_json[i].C_fname} ${res_json[i].C_lname}</td>`;
+          response_form += `<td> ${res_json[i].Total.toFixed(2)}</td>`;
           response_form += `<td> ${res_json[i].Customer_activity_year}-${res_json[i].Customer_activity_month}-${res_json[i].Customer_activity_day}</td>`;
         }
         response_form += "</table>";
@@ -54,7 +55,7 @@ function query_DB_sales_report(POST_sale_report, response) { // function for pro
     function query_DB_customer_report(POST_customer_report, response) { // function for process_customer_report_query
         c_fname = POST_customer_report['c_fname'];      // Grab the parameters from the submitted form
         c_lname = POST_customer_report['c_lname'];
-        query = "SELECT Customer_id, C_fname, C_lname, Points_collected, SUM(Quantity_ordered*Price) AS Total_purchase FROM Orders, Customer, Food_items where Customer_id = C_id AND Item_no = Item_num AND C_fname = " + `c_fname` + " AND C_lname = " + `c_lname`;  // Build the query string
+        query = "SELECT C_number, C_fname, C_lname, Total_point, Total_order FROM Customer_report HAVING C_fname = " + c_fname + " AND C_lname = " + c_lname;  // Build the query string
         con.query(query, function (err, result, fields) {   // Run the query
           if (err) throw err;
           console.log(result);
@@ -67,11 +68,11 @@ function query_DB_sales_report(POST_sale_report, response) { // function for pro
           response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
           response_form += `<td><B>Customer ID</td><td><B>Customer First Name</td><td><B>Customer Last Name</td><td><B>Customer Reward</td><td><B>Total Purchase</td>`;
           for (i in res_json) {
-            response_form += `<tr><td> ${res_json[i].Customer_id}</td>`;
+            response_form += `<tr><td> ${res_json[i].C_number}</td>`;
             response_form += `<td> ${res_json[i].C_fname}</td>`;
             response_form += `<td> ${res_json[i].C_lname}</td>`;
-            response_form += `<td> ${res_json[i].Points_collected}</td>`;
-            response_form += `<td> ${res_json[i].Total_purchase}</td>`;
+            response_form += `<td> ${res_json[i].Total_point}</td>`;
+            response_form += `<td> ${res_json[i].Total_order.toFixed(2)}</td>`;
           }
           response_form += "</table><br><br>";
           response_form += `<input type="submit" value="Generate Another Report"> </form>`;
