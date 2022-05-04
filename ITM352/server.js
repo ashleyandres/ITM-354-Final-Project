@@ -8,7 +8,7 @@ var con = mysql.createConnection({
   host: '127.0.0.1',
   user: "root",
   port: 3306,
-  database: "Shabuya",
+  database: "Shabuya_Database",
   password: ""
 });
 
@@ -25,7 +25,7 @@ function query_DB_sales_report(POST_sale_report, response) { // function for pro
       end_date = POST_sale_report['report_end_date'];
       report_year = POST_sale_report['report_year'];
       report_month = POST_sale_report['report_month'];
-      query = "SELECT * FROM Orders WHERE C_date >=" + beg_date + " AND C_date <=" + end_date + " AND C_month =" + report_month + " AND C_year = " + report_year;  // Build the query string
+      query = "SELECT * FROM Orders WHERE Customer_activity_day >=" + beg_date + " AND Customer_activity_day <=" + end_date + " AND Customer_activity_month =" + report_month + " AND Customer_activity_year = " + report_year;  // Build the query string
 
       con.query(query, function (err, result, fields) {   // Run the query
         if (err) throw err;
@@ -38,11 +38,12 @@ function query_DB_sales_report(POST_sale_report, response) { // function for pro
         // Now build the response: table of results and form to do another query
         response_form = `<form action="managerinput.html" method="GET">`;
         response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
-        response_form += `<td><B>Date of Sales</td><td><B>Total Sales</td>`;
+        response_form += `<td><B>Item Number</td><td><B>Item Name</td><td><B>Customer Activity Date</td>`;
 
         for (i in res_json) {
           response_form += `<tr><td> ${res_json[i].Order_number}</td>`;
           response_form += `<td> ${res_json[i].Quantity_ordered}</td>`;
+          response_form += `<td> ${res_json[i].Customer_activity_year}-${res_json[i].Customer_activity_month}-${res_json[i].Customer_activity_day}</td>`;
         }
         response_form += "</table>";
         response_form += `<input type="submit" value="Generate Another Report"> </form>`;
