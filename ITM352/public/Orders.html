@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shabuya</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+</style>
+</head>
+<body>
+
+  <!-- Top header -->
+  <header class="w3-container w3-black w3-small">
+    <div>
+    <p class="w3-center">
+      <img src="./images/shabuyalogo.png" alt="" width="150px">
+    </p>
+  </header>
+
+<!-- Menu Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+  
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Broths</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Meats</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Appetizers</div>
+      </a>
+    </div>
+
+    <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Original House</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+   
+      <h1><b>Miso</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+      
+      <h1><b>Spicy Miso</b> <span class="w3-tag w3-red w3-round">Hot!</span><span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+
+      <h1><b>Tonkotsu</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+
+      <h1><b>Sukiyaki</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+    </div>
+
+    <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Prime Blade Meat</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+   
+      <h1><b>Beef Toro</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+      
+      <h1><b>U.S. Wagyu Sirloin Tip</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+
+      <h1><b>Premium Rib Eye</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+
+      <h1><b>Natural Pork Belly</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+
+      <h1><b>Naturaly Pork Shoulder</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+
+      <h1><b>Natural Chicken Thigh</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+
+      <h1><b>Prime Flat Iron Steak</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+    </div>
+
+
+    <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Chicken Karaage</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+   
+      <h1><b>Soy Glazed Chicken Karaage</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+      <hr>
+      
+      <h1><b>Volcano Chicken Karaage</b> <span class="w3-tag w3-red w3-round">Hot!</span><span class="w3-right w3-tag w3-dark-grey w3-round">Order</span></h1>
+    </div>
+
+  </div>
+
+  <h1 class="w3-center w3-large" style="margin-bottom:64px">Please Call For A Server For Alcoholic Purchases</h1>
+</div>
+
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
