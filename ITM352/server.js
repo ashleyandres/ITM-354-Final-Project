@@ -107,6 +107,34 @@ function query_DB_sales_report(POST_sale_report, response) { // function for pro
         });
       }
 
+      function query_DB_employee_contact(POST_employee_contact, response) { // function for process_top_seller_report_query
+        store_location = POST_employee_contact['store_location'];      // Grab the parameters from the submitted form
+        query_employee_contact = "SELECT * FROM Employee";  // Build the query string WHERE Item_num = Item_no AND Type_of_service = '$Service_type'
+        con.query(query_employee_contact, function (err, result, fields) {   // Run the query
+          if (err) throw err;
+          console.log(result);
+          var res_string = JSON.stringify(result);
+          var res_json = JSON.parse(res_string);
+          console.log(res_json);
+    
+          // Now build the response: table of results and form to do another query
+          response_form = `<form action="topseller.html" method="GET">`;
+          response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
+          response_form += `<td><B>Store Location</td><td><B>Employee ID</td><td><B>Employee First Name</td><td><B>Employee Last Name</td><td><B>Phone Number</td><td><B>Address</td>`;
+          for (i in res_json) {
+            response_form += `<tr><td> ${store_location}</td>`;
+            response_form += `<td> ${res_json[i].Employee_Id}</td>`;
+            response_form += `<td> ${res_json[i].E_fname}</td>`;
+            response_form += `<td> ${res_json[i].E_lname}</td>`;
+            response_form += `<td> ${res_json[i].E_phone}</td>`;
+            response_form += `<td> ${res_json[i].E_address}</td>`;
+          }
+          response_form += "</table><br><br>";
+          response_form += `<input type="submit" value="Generate Another Report"> </form>`;
+          response.send(response_form);
+        });
+      }
+
 app.all('*', function (request, response, next) {
     console.log(request.method + ' to ' + request.path);
     next();
@@ -121,6 +149,12 @@ app.post("/process_customer_report", function (request, response) { // POST requ
 let POST_customer_report = request.body;
 query_DB_customer_report(POST_customer_report, response);
 });
+
+app.post("/process_employee_contact", function (request, response) { // POST request for process customer report
+  let POST_employee_contact = request.body;
+  query_DB_employee_contact(POST_employee_contact, response);
+  });
+
 
 app.post("/process_topseller_report", function (request, response) { // POST request for process customer report
   let POST_topseller_report = request.body;
