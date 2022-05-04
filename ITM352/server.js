@@ -55,7 +55,7 @@ function query_DB_sales_report(POST_sale_report, response) { // function for pro
     function query_DB_customer_report(POST_customer_report, response) { // function for process_customer_report_query
         c_fname = POST_customer_report['c_fname'];      // Grab the parameters from the submitted form
         c_lname = POST_customer_report['c_lname'];
-        query = "SELECT C_number, C_fname, C_lname, Total_point, Total_order FROM Customer_report HAVING C_fname = " + c_fname + " AND C_lname = " + c_lname;  // Build the query string
+        query = "SELECT C_number, C_fname, C_lname, Total_point, Total_order FROM Customer_report WHERE C_fname = " + c_fname + " AND C_lname = " + c_lname;  // Build the query string
         con.query(query, function (err, result, fields) {   // Run the query
           if (err) throw err;
           console.log(result);
