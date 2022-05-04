@@ -97,6 +97,82 @@ window.onload = function () {
 }
 </script>
 
+<style>
+  .w3-sidebar a {font-family: "Roboto", sans-serif}
+  body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+  
+   /* Navbar container */
+   .navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+    display: block;
+   }
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-left: 150;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  } 
+  </style>
+
 <!DOCTYPE html>
 <html>
 <title>Shabuya</title>
@@ -143,34 +219,34 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   </header>
 
     <!-- Product grid -->
-    <div class="w3-row w3-grayscale">
-      <div class="w3-col l3 s6">
-        <div class="w3-container">
-          <a href=".html"><img src="./images/Icon.jpg" width = "220" height = "220"></a>
-          <p class="w3-center">Profile</p>
+    <div class="navbar">
+      <a href="#">Customer Profile</a>
+      <div class="dropdown">
+        <button class="dropbtn">Quick Access Information
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">TBD</a>
+          <a href="#">TBD</a>
         </div>
       </div>
-  
-      <div class="w3-col l3 s6">
-        <div class="w3-container">
-          <div class="w3-display-container">
-          <a href=".html"><img src="./images/Waitlist.png" width = "250" height="220"></a>
-          </div>
-          <p class="w3-center">Waitlist</p>
+      <div class="dropdown">
+        <button class="dropbtn">Forms
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="Waitlist.html">Waitlist</a>
+          <a href="Orders.html">Order Here</a>
         </div>
       </div>
-  
-      <div class="w3-col l3 s6">
-          <div class="w3-container">
-          <a href=".html"><img src="./images/order.png" width = "180" height="220"></a>
-          <p class="w3-center">Order</p>
-          </div>
-        </div>
-  
-      <div class="w3-col l3 s6">
-        <div class="w3-container">
-          <a href="hydromate.html"><img src="./images/rewards.png" width = "180" height="220"></a>
-          <p class="w3-center">Reward Program</p>
+      <div class="dropdown">
+        <button class="dropbtn">Reports
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="managerinput.html">Sales Report</a>
+          <a href="customer_report.html">Customer Report</a>
+          <a href="topseller.html">Top Seller</a>
         </div>
       </div>
     </div>
