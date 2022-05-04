@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shabuya</title>
+    <link rel="stylesheet" href="homepage.css">
+    <center>
+        <a>
+            <a href="homepage.html">
+                <img src="images/ShabuyaLogo.jpg" width="300">
+                
+            </a>
+    </center>
+    <div class="dropdown" style="float:left;">
+      <button class="dropbtn">Mune</button>
+      <div class="dropdown-content" style="left:0;">
+          <a href="/ITM352/public/images/">Lunch Special Menu</a>
+          <a href="/Shabuya/images/">Regular Menu </a>
+          <a href="images/Shabuya_Beverage.png">Beverages</a>
+        </div>
+    </div>
+
+        <div class="dropdown" style="float:right;">
+          <button class="dropbtn">Login</button>
+          <div class="dropdown-content">
+          <div class="dropdown-content" style="right:0;">
+            <a href="ManagerLogin.html">Manager</a>
+            <a href="CustomerLogin.html">Customer</a>
+          </div>
+        
+      </div>
+      </div>
+
+
+
+      <form action="action_page.php" method="post">
+        <div class="imgcontainer">
+        </div>
+      
+        <!-- Button to open the modal login form -->
+
+      
+    <!-- Slideshow container -->
+    
+    <div class="slideshow-container"></div>
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="images/Noodel.jpg" style="width:100%">
+            <div class="container">
+                <h1>Assorted Noodle</h1>
+                <p>Rice Noodle, Long Rice,<br> Korean Ramem, Udon, Healthy Noodel</p>
+              </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="images/Meat.jpg" style="width:100%">
+            <div class="container">
+                <h1>Premium Meat Selection</h1>
+                <p>U.S. Wagyu Sirloin Tip, Premium Rid Eye</p>
+              </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="images/Seafood.jpg" style="width:100%">
+            <div class="container">
+                <h1>Unlimited Seafood selection</h1>
+                <p>Blue Crab, Clam, Fish Ball, Swai Fillet, Shrimp</p>
+              </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="images/Vegie.jpg" style="width:100%">
+            <div class="container">
+                <h1>Local Grown Vegetable</h1>
+                <p>Fresh Selection of Vegetable from Hawaii</p>
+              </div>
+        </div>
+    
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("demo");
+                let captionText = document.getElementById("caption");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                captionText.innerHTML = dots[slideIndex - 1].alt;
+            }
+        </script>
+        
+    </div>
+
+    <br>
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+</head>
+
+<body>
+    <h2>Premium All You Can Eat Expereince</h2>
+    <br>
+    <div class="row">
+        <div class="column">
+          <img src="images/More meat.jpg" alt="Snow" style="width:100%">
+        </div>
+        <div class="column">
+          <img src="images/Shoju.jpg" alt="Forest" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="images/Chopstick Meat.jpeg" alt="Forest" style="width:100%">
+          </div>
+    </div>
+    
+
+</body>
+
+
+<h2>Present By M.I.S Team for ITM 354</h2>
+</html>
+
+
+
+</html>
